@@ -1,5 +1,14 @@
 import React from "react"
-
-const IndexPage = () => <div>Hello World</div>
-
+import { Link } from "gatsby"
+import Footer from "../components/footer"
+const IndexPage = () => (
+  <div>
+    <h1>Hello</h1>
+    <h2>Im Karen, a dev from Arlington</h2>
+    <p>
+      Need a developer? <Link to="/contact">Contact me</Link>
+    </p>
+    <Footer />
+  </div>
+)
 export default IndexPage
