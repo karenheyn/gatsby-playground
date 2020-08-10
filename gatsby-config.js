@@ -5,6 +5,7 @@ module.exports = {
     author: `Karen Heyn`,
   },
   plugins: [
+    `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
