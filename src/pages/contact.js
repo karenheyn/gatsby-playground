@@ -1,6 +1,5 @@
 import React from "react"
-import Footer from "../components/footer"
-import Header from "../components/header"
+
 import Layout from "../components/layout"
 const ContactPage = () => (
   <div>
@@ -10,7 +9,6 @@ const ContactPage = () => (
       <a href="https://www.linkedin.com/in/karenheyn" target="blank">
         LinkedIn
       </a>
-      <Footer />
     </Layout>
   </div>
 )
