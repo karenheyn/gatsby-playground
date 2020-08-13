@@ -11,6 +11,9 @@
 
 .header {
     padding: 1rem 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .title {
@@ -27,4 +30,9 @@
 
 .active-nav-item {
     color: #333333
+}
+
+nav {
+    display: flex;
+    align-items: center;
 }

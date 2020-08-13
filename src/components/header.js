@@ -45,6 +45,15 @@ const Header = () => {
           </li>
           <li>
             <Link
+              to="/projects"
+              className={HeaderStyles.navItem}
+              activeClassName={HeaderStyles.activeNavItem}
+            >
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/contact"
               className={HeaderStyles.navItem}
               activeClassName={HeaderStyles.activeNavItem}
