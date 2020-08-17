@@ -1,5 +1,5 @@
 .container {
-    margin: 0 auto;
+    margin: 0 20px;
     max-width: 1050px;
     display: flex;
     flex-direction: column;
@@ -8,4 +8,10 @@
 
 .content {
     flex-grow: 1;
+}
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        margin: 0 auto;
+    }
 }
