@@ -5,6 +5,11 @@
   grid-template-rows: 250px 200px 250px 200px;
   width: 100%;
   font-family: "Open Sans", sans-serif;
+  h2,
+  h3,
+  p {
+    margin-bottom: 1rem;
+  }
 
   .blurb {
     position: absolute;
@@ -24,6 +29,13 @@
 
   .large {
     width: 88%;
+    h4 {
+      margin-bottom: 0;
+    }
+  }
+
+  .xlarge {
+    width: 90%;
     h4 {
       margin-bottom: 0;
     }

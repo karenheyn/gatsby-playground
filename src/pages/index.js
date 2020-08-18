@@ -9,6 +9,7 @@ import Pink from "../images/pink.jpg"
 import Green from "../images/green.jpg"
 import Blue from "../images/blue.jpg"
 import White from "../images/white.jpg"
+import Gold from "../images/gold.jpg"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
@@ -82,14 +83,21 @@ const IndexPage = () => {
           </div>
         </div>
         <div className={indexStyles.item6}>
-          <img src={White} alt="white background" />
-          <div className={`${indexStyles.blurb} ${indexStyles.large}`}>
+          <img src={Gold} alt="gold background" />
+          <div className={`${indexStyles.blurb} ${indexStyles.xlarge}`}>
             {newestPost.allContentfulBlogPost.edges.map(edge => {
               return (
-                <Link to={`/blog/${edge.node.slug}`}>
-                  <h2>{edge.node.title}</h2>
+                <div>
+                  <h2>Most Recent Post</h2>
+                  <h3>{edge.node.title}</h3>
                   <p>{edge.node.publishedDate}</p>
-                </Link>
+                  <Link
+                    className={`${indexStyles.outline}`}
+                    to={`/blog/${edge.node.slug}`}
+                  >
+                    Read more
+                  </Link>
+                </div>
               )
             })}
           </div>
