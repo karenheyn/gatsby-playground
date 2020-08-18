@@ -5,26 +5,63 @@ import Layout from "../components/layout"
 import indexStyles from "./index.module.scss"
 import Binary from "../images/binary.jpg"
 import Karen from "../images/Karen.png"
+import Pink from "../images/pink.jpg"
+import Green from "../images/green.jpg"
+import Blue from "../images/blue.jpg"
+import White from "../images/white.jpg"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 const IndexPage = () => (
   <Layout>
     <Head title="Home" />
     <div className={indexStyles.wrapper}>
       <h1 className={indexStyles.heading}>Hello World.</h1>
     </div>
-    <h3>Im Karen, a developer from Arlington, VA</h3>
-
     <div className={indexStyles.grid}>
       <div className={indexStyles.item1}>
         <img alt="Karen" src={Karen}></img>
       </div>
       <div className={indexStyles.item2}>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem neque
-          consequuntur quos sint repellendus in reprehenderit, temporibus saepe
-          nulla odit eaque ut ab nesciunt corporis eius soluta eligendi quaerat
-          repudiandae sequi est. Totam dolorem eaque temporibus iusto vitae
-          dolores ipsum.
-        </p>
+        <img alt="pink background" src={Pink}></img>
+        <div>
+          <div className={indexStyles.blurb}>
+            <h3>I'm Karen, a developer from Arlington, VA</h3>
+          </div>
+        </div>
+      </div>
+      <div className={indexStyles.item3}>
+        <img src={White} alt="white background" />
+        <div className={`${indexStyles.blurb} ${indexStyles.large}`}>
+          <h4>
+            HTML CSS Javascript Python React Gatsby Vue Nuxt Node Mongoose
+            MongoDB Express Adobe XD Figma GraphQL Firebase NPM Git Deployment
+            Bootstrap jQuery Peewee Postgres SQL Sass Wire-framing CLI Markdown
+            Storybook Ajax Django Agile SCRUM Material UI Jest
+          </h4>
+        </div>
+      </div>
+      <div className={indexStyles.item4}>
+        <img src={Green} alt="green background" />
+        <div className={`${indexStyles.blurb} ${indexStyles.small}`}>
+          <h3>
+            <FontAwesomeIcon icon={faLinkedin} size="2x" />
+            <br />
+            <br />
+            Connect with me on LinkedIn
+          </h3>
+        </div>
+      </div>
+      <div className={indexStyles.item5}>
+        <img src={Blue} alt="green background" />
+        <div className={`${indexStyles.blurb} ${indexStyles.small}`}>
+          <h3>
+            <FontAwesomeIcon icon={faGithub} size="2x" />
+            <br />
+            <br />
+            Follow me on Github
+          </h3>
+        </div>
       </div>
     </div>
     <p>
