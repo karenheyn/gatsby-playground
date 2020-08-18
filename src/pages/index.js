@@ -84,8 +84,14 @@ const IndexPage = () => {
         <div className={indexStyles.item6}>
           <img src={White} alt="white background" />
           <div className={`${indexStyles.blurb} ${indexStyles.large}`}>
-            <h2>{newestPost.allContentfulBlogPost.edges.node}</h2>
-            <p>{newestPost.allContentfulBlogPost.edges.node}</p>
+            {newestPost.allContentfulBlogPost.edges.map(edge => {
+              return (
+                <Link to={`/blog/${edge.node.slug}`}>
+                  <h2>{edge.node.title}</h2>
+                  <p>{edge.node.publishedDate}</p>
+                </Link>
+              )
+            })}
           </div>
         </div>
       </div>
