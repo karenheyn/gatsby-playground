@@ -10,9 +10,11 @@ import Green from "../images/green.jpg"
 import Blue from "../images/blue.jpg"
 import White from "../images/white.jpg"
 import Gold from "../images/gold.jpg"
+import TieDye from "../images/tiedye.jpg"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { faFile } from "@fortawesome/free-regular-svg-icons"
 
 const IndexPage = () => {
   const newestPost = useStaticQuery(graphql`
@@ -88,7 +90,7 @@ const IndexPage = () => {
             {newestPost.allContentfulBlogPost.edges.map(edge => {
               return (
                 <div>
-                  <h2>Most Recent Post</h2>
+                  <h2>My Most Recent Blog Post:</h2>
                   <h3>{edge.node.title}</h3>
                   <p>{edge.node.publishedDate}</p>
                   <Link
@@ -100,6 +102,28 @@ const IndexPage = () => {
                 </div>
               )
             })}
+          </div>
+        </div>
+        <div className={indexStyles.item7}>
+          <img src={TieDye} alt="multi background" />
+          <div className={`${indexStyles.blurb} ${indexStyles.small}`}>
+            <h3>
+              <FontAwesomeIcon icon={faFile} size="2x" />
+              <br />
+              <br />
+              Download/view my resumé
+            </h3>
+          </div>
+        </div>
+        <div className={indexStyles.item7}>
+          <img src={TieDye} alt="multi background" />
+          <div className={`${indexStyles.blurb} ${indexStyles.small}`}>
+            <h3>
+              <FontAwesomeIcon icon={faFile} size="2x" />
+              <br />
+              <br />
+              Download/view my resumé
+            </h3>
           </div>
         </div>
       </div>
