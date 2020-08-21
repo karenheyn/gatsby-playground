@@ -6,19 +6,30 @@
   font-family: "Didact Gothic", sans-serif;
 }
 
+nav {
+  width: auto !important;
+  box-shadow: none !important;
+  background: #ffffff !important;
+
+}
+
 .nav-item:hover {
   color: #000000;
 }
 
 .header {
-  padding: 1rem 0 3rem;
+  padding: 1rem 0 1rem;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+
+
   h1 {
     font-family: "Bebas Neue", cursive;
     letter-spacing: 0.1rem;
+    text-align: center;
   }
 }
 
@@ -28,6 +39,7 @@
   text-decoration: none;
   transition: opacity 0.3s ease-in;
 }
+
 .title:hover {
   opacity: 0.7;
 }
@@ -38,6 +50,7 @@
   margin: 0;
 }
 
+
 .active-nav-item {
   color: #333333;
   font-weight: bold;
@@ -46,5 +59,6 @@
 @media only screen and (min-width: 768px) {
   .header {
     justify-content: space-between;
+    flex-direction: row;
   }
 }

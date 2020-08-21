@@ -5,6 +5,7 @@ module.exports = {
     author: `Karen Heyn`,
   },
   plugins: [
+    `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-fontawesome-css`,
     {
       resolve: "gatsby-plugin-web-font-loader",
