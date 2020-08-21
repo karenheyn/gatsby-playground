@@ -6,11 +6,27 @@ import indexStyles from "./index.module.scss"
 import Gallery from "../components/carousel"
 import Texture from "../images/texture.jpg"
 import Blue from "../images/blue.jpg"
-
+import Purple from "../images/purple.jpg"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import {
+  faGithub,
+  faLinkedin,
+  faHtml5,
+  faCss3Alt,
+  faJs,
+  faPython,
+  faNpm,
+  faFigma,
+  faSass,
+  faReact,
+  faVuejs,
+  faNode,
+  faGitAlt,
+  faBootstrap,
+} from "@fortawesome/free-brands-svg-icons"
 import { faFile } from "@fortawesome/free-regular-svg-icons"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import AOS from "aos"
 import "aos/dist/aos.css"
 const IndexPage = () => {
@@ -56,15 +72,81 @@ const IndexPage = () => {
                 in tech. Javascript is my weapon of choice. I specialize in
                 creating responsive designs that look amazing on any device.
               </p>
+              <div className={indexStyles.socialDiv}>
+                <a
+                  href="github.com/karenheyn"
+                  data-aos="zoom-out-up"
+                  data-aos-delay="1000"
+                  className={indexStyles.social}
+                >
+                  <FontAwesomeIcon icon={faGithub} size="3x" />
+
+                  <h5>Github</h5>
+                </a>
+
+                <a
+                  href="github.com/karenheyn"
+                  data-aos="zoom-out-up"
+                  data-aos-delay="1300"
+                  className={indexStyles.social}
+                >
+                  <FontAwesomeIcon icon={faFile} size="3x" />
+                  <h5>Resumé</h5>
+                </a>
+              </div>
             </div>
           </div>
         </div>
         <div className={indexStyles.item2} data-aos="fade-in">
-          <img alt="pink background" src={Blue}></img>
-          <div className={indexStyles.blurb}></div>
+          <img alt="blue background" src={Blue}></img>
+          <div className={indexStyles.blurb}>
+            {newestPost.allContentfulBlogPost.edges.map(edge => {
+              return (
+                <div
+                  className={indexStyles.recentPost}
+                  data-aos="flip-down"
+                  data-aos-delay="400"
+                >
+                  <h2>My Most Recent Blog Post:</h2>
+                  <h3>{edge.node.title}</h3>
+                  <p>{edge.node.publishedDate}</p>
+                  <Link
+                    className={`${indexStyles.outline}`}
+                    to={`/blog/${edge.node.slug}`}
+                  >
+                    <h4 style={{ display: "inline" }}>Read more</h4>
+                    <FontAwesomeIcon
+                      className={indexStyles.arrow}
+                      icon={faArrowRight}
+                      size="2x"
+                      style={{ display: "inline" }}
+                    />
+                  </Link>
+                </div>
+              )
+            })}
+            <div className={indexStyles.iconDiv}>
+              {" "}
+              <FontAwesomeIcon icon={faHtml5} size="3x" />
+              <FontAwesomeIcon icon={faCss3Alt} size="3x" />
+              <FontAwesomeIcon icon={faJs} size="3x" />
+              <FontAwesomeIcon icon={faPython} size="3x" />
+              <FontAwesomeIcon icon={faNode} size="3x" />
+              <FontAwesomeIcon icon={faVuejs} size="3x" />
+              <FontAwesomeIcon icon={faReact} size="3x" />
+              <FontAwesomeIcon icon={faSass} size="3x" />
+              <FontAwesomeIcon icon={faFigma} size="3x" />
+              <FontAwesomeIcon icon={faNpm} size="3x" />
+              <FontAwesomeIcon icon={faGitAlt} size="3x" />
+              <FontAwesomeIcon icon={faBootstrap} size="3x" />
+            </div>
+          </div>
         </div>
         <div className={indexStyles.item3} data-aos="fade-in">
-          {" "}
+          <img alt="purple background" src={Purple}></img>
+          <div className={indexStyles.blurb}></div>
+        </div>
+        <div className={indexStyles.item4} data-aos="fade-in">
           <Gallery />
         </div>
 
