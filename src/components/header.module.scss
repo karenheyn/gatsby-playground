@@ -1,15 +1,9 @@
 .nav-item {
   color: #999999;
-  font-size: 0.92rem;
+  font-size: 0.82rem;
+  margin-right: 1.3rem;
   text-decoration: none;
-  font-family: "Didact Gothic", sans-serif;
-}
-
-nav {
-  width: auto !important;
-  box-shadow: none !important;
-  background: #ffffff !important;
-
+  font-family: "Noto Sans", sans-serif;
 }
 
 .nav-item:hover {
@@ -20,23 +14,8 @@ nav {
   padding: 1rem 0 1rem;
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  text-align: center;
-
-
-  h1 {
-    font-family: "Bebas Neue", cursive;
-    letter-spacing: 0.1rem;
-    text-align: center;
-  }
-}
-
-.title {
-  color: #000000;
-  font-size: 3.5rem;
-  text-decoration: none;
-  transition: opacity 0.3s ease-in;
 }
 
 .title:hover {
@@ -49,15 +28,13 @@ nav {
   margin: 0;
 }
 
-
 .active-nav-item {
   color: #333333;
-  font-weight: bold;
+  // font-weight: bold;
 }
 
 @media only screen and (min-width: 768px) {
   .header {
     justify-content: space-between;
-    flex-direction: row;
   }
 }

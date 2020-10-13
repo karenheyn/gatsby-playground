@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Karen Heyn`,
-    description: `Portfolio site for Karen Heyn, web developer from Arlington, VA.`,
+    description: `Portfolio site for Karen Heyn, web developer & designer.`,
     author: `Karen Heyn`,
   },
   plugins: [
@@ -11,7 +11,13 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Open Sans", "Didact Gothic", "Bebas Neue"],
+          families: [
+            "Satisfy",
+            "Noto Sans",
+            "Open Sans",
+            "Didact Gothic",
+            "Bebas Neue",
+          ],
         },
       },
     },
