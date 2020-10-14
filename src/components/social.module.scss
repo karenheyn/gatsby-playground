@@ -1,17 +1,47 @@
 .list {
     list-style: none;
-    position: absolute;
-    left: 0;
+    display: flex;
 
     :first-child {
         display: flex;
         justify-content: center;
+        margin-right: 20px;
+    }
+
+    li:first-of-type {
+        display: none;
     }
 
     .vr {
-        height: 80px;
-        width: 1px;
+        height: 1px;
+        width: 80px;
         background: black;
-        margin-bottom: 30px;
+        margin-top: 9px;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .list {
+        list-style: none;
+        position: absolute;
+        left: 0;
+        display: block;
+
+        :first-child {
+            display: flex;
+            justify-content: center;
+            margin-right: 0;
+        }
+
+        li:first-of-type {
+            display: flex;
+        }
+
+        .vr {
+            height: 80px;
+            width: 1px;
+            background: black;
+            margin-bottom: 30px;
+        }
     }
 }

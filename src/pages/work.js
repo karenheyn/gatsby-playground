@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 const Projects = () => (
   <div>
     <Layout>
-      <Head title="Projects" />
+      <Head title="Work" />
       <h1>Projects will go here</h1>
     </Layout>
   </div>

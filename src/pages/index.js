@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Head from "../components/head"
 import Layout from "../components/layout"
@@ -39,6 +39,17 @@ import "aos/dist/aos.css"
 import Circle from "../images/redcircle.png"
 const IndexPage = () => {
   AOS.init()
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 768)
+
+  const updateMedia = () => {
+    setDesktop(window.innerWidth > 768)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia)
+    return () => window.removeEventListener("resize", updateMedia)
+  })
+
   const newestPost = useStaticQuery(graphql`
     query newPost {
       allContentfulBlogPost(
@@ -60,9 +71,10 @@ const IndexPage = () => {
       <Head title="Home" />
 
       <div className={indexStyles.wrapper}>
-        <Sidebar />
         <img className={indexStyles.sig} src={Sig} alt="signature" />
         <img className={indexStyles.go} src={Circle} alt="red circle" />
+        {isDesktop ? <Sidebar /> : null}
+
         {/* <img src={Karen} alt="karen" style={{ height: "250px" }}></img>
         <h1 className={indexStyles.heading}>Hello World.</h1>
         <button>
@@ -201,9 +213,9 @@ const IndexPage = () => {
         <div className={indexStyles.item4} data-aos="fade-in"></div> */}
       </div>
 
-      <p>
+      {/* <p>
         Need a developer? <Link to="/contact">Contact me</Link>
-      </p>
+      </p> */}
     </Layout>
   )
 }

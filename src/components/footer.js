@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import Social from "../components/social"
 import footerStyles from "./footer.module.scss"
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -11,8 +12,19 @@ const Footer = () => {
       }
     }
   `)
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 768)
+
+  const updateMedia = () => {
+    setDesktop(window.innerWidth > 768)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia)
+    return () => window.removeEventListener("resize", updateMedia)
+  })
   return (
     <footer className={footerStyles.footer}>
+      {isDesktop ? null : <Social />}
       <p>Created by {data.site.siteMetadata.author}, © 2020</p>
     </footer>
   )
