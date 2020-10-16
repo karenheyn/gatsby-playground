@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 // import "./header.module.scss"
 import HeaderStyles from "./header.module.scss"
@@ -13,6 +13,7 @@ const Header = () => {
       }
     }
   `)
+  const [menuActive, setMenuState] = useState(false)
   return (
     <header className={HeaderStyles.header}>
       <Link
@@ -23,7 +24,19 @@ const Header = () => {
         {/* {data.site.siteMetadata.title} */}
         <img src={Logo} height="60" />
       </Link>
-      <nav>
+
+      <div
+        onClick={() => setMenuState(!menuActive)}
+        className={`${HeaderStyles.navIcon3} ${
+          menuActive ? HeaderStyles.open : ""
+        }`}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      {/* <nav>
         <ul className={HeaderStyles.navList}>
           <li>
             <Link
@@ -67,7 +80,7 @@ const Header = () => {
             </Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </header>
   )
 }
