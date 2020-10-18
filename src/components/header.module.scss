@@ -1,3 +1,18 @@
+//mobile nav
+.mobile-nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgb(238, 239, 236);
+  overflow: hidden;
+}
+
+// desktop nav
 .nav-item {
   color: #999999;
   font-size: 0.82rem;

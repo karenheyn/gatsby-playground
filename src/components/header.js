@@ -15,7 +15,9 @@ const Header = () => {
   `)
   const [menuActive, setMenuState] = useState(false)
   return (
-    <header className={HeaderStyles.header}>
+    <header
+      className={menuActive ? HeaderStyles.mobileNav : HeaderStyles.header}
+    >
       <Link
         to="/"
         className={HeaderStyles.title}
@@ -38,11 +40,11 @@ const Header = () => {
       </div>
       {menuActive ? (
         <nav>
-          <ul className={HeaderStyles.navList}>
+          <ul>
             <li>
               <Link
                 to="/"
-                className={HeaderStyles.navItem}
+                // className={HeaderStyles.mobileNav}
                 activeClassName={HeaderStyles.activeNavItem}
               >
                 Home
@@ -51,7 +53,7 @@ const Header = () => {
             <li>
               <Link
                 to="/about"
-                className={HeaderStyles.navItem}
+                // className={HeaderStyles.mobileNav}
                 activeClassName={HeaderStyles.activeNavItem}
               >
                 About
@@ -60,7 +62,7 @@ const Header = () => {
             <li>
               <Link
                 to="/work"
-                className={HeaderStyles.navItem}
+                // className={HeaderStyles.mobileNav}
                 activeClassName={HeaderStyles.activeNavItem}
               >
                 Work
@@ -69,14 +71,18 @@ const Header = () => {
             <li>
               <Link
                 to="/contact"
-                className={HeaderStyles.navItem}
+                // className={HeaderStyles.mobileNav}
                 activeClassName={HeaderStyles.activeNavItem}
               >
                 Contact
               </Link>
             </li>
             <li>
-              <Link to="/blog" className={HeaderStyles.navItem}>
+              <Link
+                to="/blog"
+                // className={HeaderStyles.mobileNav}
+                activeClassName={HeaderStyles.activeNavItem}
+              >
                 Blog
               </Link>
             </li>
