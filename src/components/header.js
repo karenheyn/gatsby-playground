@@ -36,7 +36,53 @@ const Header = () => {
         {/* {data.site.siteMetadata.title} */}
         <img src={Logo} height="60" />
       </Link>
-      {isDesktop ? null : (
+      {isDesktop ? (
+        <nav>
+          <ul className={HeaderStyles.navList}>
+            <li>
+              <Link
+                to="/"
+                className={HeaderStyles.navItem}
+                activeClassName={HeaderStyles.activeNavItem}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about"
+                className={HeaderStyles.navItem}
+                activeClassName={HeaderStyles.activeNavItem}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/work"
+                className={HeaderStyles.navItem}
+                activeClassName={HeaderStyles.activeNavItem}
+              >
+                Work
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                className={HeaderStyles.navItem}
+                activeClassName={HeaderStyles.activeNavItem}
+              >
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link to="/blog" className={HeaderStyles.navItem}>
+                Blog
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      ) : (
         <div
           onClick={() => setMenuState(!menuActive)}
           className={`${HeaderStyles.navIcon3} ${
@@ -99,53 +145,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-      ) : (
-        <nav>
-          <ul className={HeaderStyles.navList}>
-            <li>
-              <Link
-                to="/"
-                className={HeaderStyles.navItem}
-                activeClassName={HeaderStyles.activeNavItem}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-                className={HeaderStyles.navItem}
-                activeClassName={HeaderStyles.activeNavItem}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/work"
-                className={HeaderStyles.navItem}
-                activeClassName={HeaderStyles.activeNavItem}
-              >
-                Work
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                className={HeaderStyles.navItem}
-                activeClassName={HeaderStyles.activeNavItem}
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link to="/blog" className={HeaderStyles.navItem}>
-                Blog
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      )}
+      ) : null}
     </header>
   )
 }
