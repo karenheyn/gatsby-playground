@@ -1,8 +1,6 @@
 //mobile nav
 .mobile-nav{
-  padding: 18px 0;
   position: fixed;
-  max-width: 1150px;
   top: 0;
   bottom: 0;
 width: 100%;
@@ -13,15 +11,52 @@ width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   nav{
     flex: 100%;
     height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: "Noto Sans", sans-serif;
+    animation-name: mobile-nav-animation;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  @keyframes mobile-nav-animation { 
+    0% { 
+      width: 0;
+      opacity: 0;
+    }
+    1% { 
+      width: 100%;
+      opacity: 0;
+    }
+    100% { 
+      width: 100%;
+      opacity: 1;
+    }
+    }
     ul{
-    list-style: none; flex-direction: column;
-
+    list-style: none;
+    // width: 30%;
+    margin: 0 auto;
+    font-size: 1.7rem;
+    text-align: center;
+    li{
+      margin-bottom: 50px;
+     
+    }
     }
   }
 }
+
+
+
+
 
 // desktop nav
 .nav-item {
@@ -63,6 +98,7 @@ width: 100%;
   // font-weight: bold;
 }
 
+// hamburger
 .nav-icon3 {
   width: 60px;
   height: 45px;
