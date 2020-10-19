@@ -6,7 +6,7 @@
 width: 100%;
   height: 100%;
   z-index: 10;
-  background: rgb(238, 239, 236);
+  background: #ffffff;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
@@ -67,7 +67,7 @@ width: 100%;
 
 // desktop nav
 .nav-item {
-  color: #999999;
+  color: #000000;
   font-size: 0.82rem;
   margin-right: 1.3rem;
   text-decoration: none;
@@ -75,7 +75,8 @@ width: 100%;
 }
 
 .nav-item:hover {
-  color: #000000;
+  color:#dc3023
+  // font-weight: bold;
 }
 
 .header {
@@ -103,7 +104,8 @@ width: 100%;
 .active-nav-item {
   // color: #333333;
   // font-weight: bold;
-  color: #dc3023;
+  color: #000000;
+  border-bottom: 1px solid #dc3023 ;
 }
 
 // hamburger
@@ -179,12 +181,5 @@ width: 100%;
     top: 18px;
     width: 0%;
     left: 50%;
-  }
-}
-
-
-@media only screen and (min-width: 768px) {
-  .header {
-    justify-content: space-between;
   }
 }

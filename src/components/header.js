@@ -3,6 +3,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 // import "./header.module.scss"
 import HeaderStyles from "./header.module.scss"
 import Logo from "../images/newlogo@2x.png"
+import Nav from "./nav"
 const Header = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -28,60 +29,12 @@ const Header = () => {
     <header
       className={menuActive ? HeaderStyles.mobileNav : HeaderStyles.header}
     >
-      <Link
-        to="/"
-        className={HeaderStyles.title}
-        activeClassName={HeaderStyles.activeNavItem}
-      >
+      <Link to="/" className={HeaderStyles.title}>
         {/* {data.site.siteMetadata.title} */}
         <img src={Logo} height="60" />
       </Link>
       {isDesktop ? (
-        <nav>
-          <ul className={HeaderStyles.navList}>
-            <li>
-              <Link
-                to="/"
-                className={HeaderStyles.navItem}
-                activeClassName={HeaderStyles.activeNavItem}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-                className={HeaderStyles.navItem}
-                activeClassName={HeaderStyles.activeNavItem}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/work"
-                className={HeaderStyles.navItem}
-                activeClassName={HeaderStyles.activeNavItem}
-              >
-                Work
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                className={HeaderStyles.navItem}
-                activeClassName={HeaderStyles.activeNavItem}
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link to="/blog" className={HeaderStyles.navItem}>
-                Blog
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <Nav />
       ) : (
         <div
           onClick={() => setMenuState(!menuActive)}
