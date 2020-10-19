@@ -1,6 +1,10 @@
 .list {
     list-style: none;
     display: flex;
+    
+    li:nth-last-child(-n+3){
+        cursor: pointer;
+    }
 
     :first-child {
         display: flex;

@@ -1,15 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
-import NavStyles from "./nav.module.scss"
+import HeaderStyles from "./header.module.scss"
 const Nav = props => {
   return (
     <nav>
-      <ul className={NavStyles.navList}>
+      <ul className={HeaderStyles.navList}>
         <li>
           <Link
             to="/"
-            className={NavStyles.navItem}
-            activeClassName={NavStyles.activeNavItem}
+            className={HeaderStyles.navItem}
+            activeClassName={HeaderStyles.activeNavItem}
           >
             Home
           </Link>
@@ -17,8 +17,8 @@ const Nav = props => {
         <li>
           <Link
             to="/about"
-            className={NavStyles.navItem}
-            activeClassName={NavStyles.activeNavItem}
+            className={HeaderStyles.navItem}
+            activeClassName={HeaderStyles.activeNavItem}
           >
             About
           </Link>
@@ -26,8 +26,8 @@ const Nav = props => {
         <li>
           <Link
             to="/work"
-            className={NavStyles.navItem}
-            activeClassName={NavStyles.activeNavItem}
+            className={HeaderStyles.navItem}
+            activeClassName={HeaderStyles.activeNavItem}
           >
             Work
           </Link>
@@ -35,14 +35,14 @@ const Nav = props => {
         <li>
           <Link
             to="/contact"
-            className={NavStyles.navItem}
-            activeClassName={NavStyles.activeNavItem}
+            className={HeaderStyles.navItem}
+            activeClassName={HeaderStyles.activeNavItem}
           >
             Contact
           </Link>
         </li>
         <li>
-          <Link to="/blog" className={NavStyles.navItem}>
+          <Link to="/blog" className={HeaderStyles.navItem}>
             Blog
           </Link>
         </li>

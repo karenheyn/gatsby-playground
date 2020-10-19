@@ -36,6 +36,7 @@ const Header = () => {
       {isDesktop ? (
         <Nav />
       ) : (
+        //hamburger
         <div
           onClick={() => setMenuState(!menuActive)}
           className={`${HeaderStyles.navIcon3} ${
@@ -48,57 +49,7 @@ const Header = () => {
           <span></span>
         </div>
       )}
-      {menuActive ? (
-        <nav>
-          <ul>
-            <li>
-              <Link
-                to="/"
-                // className={HeaderStyles.mobileNav}
-                activeClassName={HeaderStyles.activeNavItem}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-                // className={HeaderStyles.mobileNav}
-                activeClassName={HeaderStyles.activeNavItem}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/work"
-                // className={HeaderStyles.mobileNav}
-                activeClassName={HeaderStyles.activeNavItem}
-              >
-                Work
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                // className={HeaderStyles.mobileNav}
-                activeClassName={HeaderStyles.activeNavItem}
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/blog"
-                // className={HeaderStyles.mobileNav}
-                activeClassName={HeaderStyles.activeNavItem}
-              >
-                Blog
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      ) : null}
+      {menuActive ? <Nav /> : null}
     </header>
   )
 }
