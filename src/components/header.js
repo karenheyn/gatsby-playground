@@ -21,8 +21,10 @@ const Header = () => {
   }
 
   useEffect(() => {
-    window.addEventListener("resize", updateMedia)
-    return () => window.removeEventListener("resize", updateMedia)
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", updateMedia)
+      return () => window.removeEventListener("resize", updateMedia)
+    }
   })
   const [menuActive, setMenuState] = useState(false)
   return (
