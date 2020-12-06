@@ -34,11 +34,9 @@ import {
   faPencilAlt,
   faLaptopCode,
 } from "@fortawesome/free-solid-svg-icons"
-import AOS from "aos"
-import "aos/dist/aos.css"
 import Circle from "../images/redcircle.png"
 const IndexPage = () => {
-  AOS.init()
+  // AOS.init()
   const [isDesktop, setDesktop] = useState(window.innerWidth > 768)
 
   const updateMedia = () => {
