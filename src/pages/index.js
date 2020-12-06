@@ -39,15 +39,6 @@ const IndexPage = () => {
   // AOS.init()
   const [isDesktop, setDesktop] = useState(window.innerWidth > 768)
 
-  const updateMedia = () => {
-    setDesktop(window.innerWidth > 768)
-  }
-
-  useEffect(() => {
-    window.addEventListener("resize", updateMedia)
-    return () => window.removeEventListener("resize", updateMedia)
-  })
-
   const newestPost = useStaticQuery(graphql`
     query newPost {
       allContentfulBlogPost(
