@@ -31,7 +31,7 @@ const Header = () => {
 
     return width
   }
-  const [isDesktop, setDesktop] = useState(width > 768)
+  const [isDesktop, setDesktop] = useState(useWindowWidth() > 768)
 
   const updateMedia = () => {
     setDesktop(width > 768)
