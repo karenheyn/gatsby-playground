@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import useWindowWidth from "../hooks/winwidth"
 import Social from "../components/social"
 import footerStyles from "./footer.module.scss"
 const Footer = () => {
@@ -12,10 +13,11 @@ const Footer = () => {
       }
     }
   `)
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 768)
+  const windowWidth = useWindowWidth()
+  const [isDesktop, setDesktop] = useState(windowWidth > 768)
 
   const updateMedia = () => {
-    setDesktop(window.innerWidth > 768)
+    setDesktop(windowWidth > 768)
   }
 
   useEffect(() => {
