@@ -4,6 +4,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import HeaderStyles from "./header.module.scss"
 import Logo from "../images/newlogo@2x.png"
 import Nav from "./nav"
+import useWindowWidth from "../hooks/winwidth"
 const Header = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -14,27 +15,11 @@ const Header = () => {
       }
     }
   `)
-  const useWindowWidth = () => {
-    const isBrowser = typeof window !== "undefined"
-    const [width, setWidth] = useState(isBrowser ? window.innerWidth : 0)
-
-    useEffect(() => {
-      if (!isBrowser) return false
-
-      const handleResize = () => setWidth(window.innerWidth)
-      window.addEventListener("resize", handleResize)
-
-      return () => {
-        window.removeEventListener("resize", handleResize)
-      }
-    })
-
-    return width
-  }
-  const [isDesktop, setDesktop] = useState(useWindowWidth() > 768)
+  const windowWidth = useWindowWidth()
+  const [isDesktop, setDesktop] = useState(windowWidth > 768)
 
   const updateMedia = () => {
-    setDesktop(width > 768)
+    setDesktop(windowWidth > 768)
   }
 
   useEffect(() => {
