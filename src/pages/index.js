@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import indexStyles from "./index.module.scss"
 import Sig from "../images/Sig.png"
 import Sidebar from "../components/social"
+import useWindowWidth from "../hooks/winwidth"
 import Texture from "../images/texture.jpg"
 import Blue from "../images/blue.jpg"
 import Karen from "../images/Karen.png"
@@ -34,8 +35,21 @@ import {
   faPencilAlt,
   faLaptopCode,
 } from "@fortawesome/free-solid-svg-icons"
+
 import Circle from "../images/redcircle.png"
 const IndexPage = () => {
+  const windowWidth = useWindowWidth()
+  const [isDesktop, setDesktop] = useState(windowWidth > 768)
+
+  const updateMedia = () => {
+    setDesktop(windowWidth > 768)
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia)
+    return () => window.removeEventListener("resize", updateMedia)
+  })
+
   const newestPost = useStaticQuery(graphql`
     query newPost {
       allContentfulBlogPost(
