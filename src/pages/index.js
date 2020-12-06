@@ -36,9 +36,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import Circle from "../images/redcircle.png"
 const IndexPage = () => {
-  // AOS.init()
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 768)
-
   const newestPost = useStaticQuery(graphql`
     query newPost {
       allContentfulBlogPost(
