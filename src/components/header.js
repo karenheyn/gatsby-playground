@@ -14,17 +14,32 @@ const Header = () => {
       }
     }
   `)
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 768)
+  const useWindowWidth = () => {
+    const isBrowser = typeof window !== "undefined"
+    const [width, setWidth] = useState(isBrowser ? window.innerWidth : 0)
+
+    useEffect(() => {
+      if (!isBrowser) return false
+
+      const handleResize = () => setWidth(window.innerWidth)
+      window.addEventListener("resize", handleResize)
+
+      return () => {
+        window.removeEventListener("resize", handleResize)
+      }
+    })
+
+    return width
+  }
+  const [isDesktop, setDesktop] = useState(width > 768)
 
   const updateMedia = () => {
-    setDesktop(window.innerWidth > 768)
+    setDesktop(width > 768)
   }
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", updateMedia)
-      return () => window.removeEventListener("resize", updateMedia)
-    }
+    window.addEventListener("resize", updateMedia)
+    return () => window.removeEventListener("resize", updateMedia)
   })
   const [menuActive, setMenuState] = useState(false)
   return (
