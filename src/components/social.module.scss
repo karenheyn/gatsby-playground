@@ -1,7 +1,7 @@
 .list {
     list-style: none;
     display: flex;
-    font-size: 1rem;
+    font-size: 1.1rem;
     
     li:nth-last-child(-n+3){
         cursor: pointer;
@@ -29,7 +29,7 @@
     .list {
         list-style: none;
         position: absolute;
-        left: 0;
+        left: .45rem;
         display: block;
 
         :first-child {
@@ -48,7 +48,7 @@
         }
 
         .vr {
-            height: 80px;
+            height: 4.5rem;
             width: 1px;
             background: black;
             margin-bottom: 30px;

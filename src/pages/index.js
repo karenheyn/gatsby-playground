@@ -71,8 +71,11 @@ const IndexPage = () => {
       <Head title="Home" />
 
       <div className={indexStyles.wrapper}>
-        <img className={indexStyles.sig} src={Sig} alt="signature" />
-        <img className={indexStyles.go} src={Circle} alt="red circle" />
+        <div className={indexStyles.logo}>
+          <img className={indexStyles.sig} src={Sig} alt="signature" />
+          <img className={indexStyles.go} src={Circle} alt="red circle" />
+        </div>
+        <h2>I build and design simple, beautiful websites.</h2>
         {isDesktop ? <Sidebar /> : null}
 
         {/* <img src={Karen} alt="karen" style={{ height: "250px" }}></img>

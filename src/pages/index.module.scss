@@ -217,6 +217,7 @@
     z-index: 2;
     font-family: 'Satisfy', cursive;
     max-height: 130px;
+
   }
 
   // .img {
@@ -235,9 +236,22 @@
 
 .go {
   animation: spin 5.5s infinite forwards linear;
+  height: 12rem;
 }
 
 .image-link {
+  text-align: center;
+}
+.logo{
+
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  width: 80%;
+}
+h2{
   text-align: center;
 }
 
@@ -338,9 +352,11 @@
 @media only screen and (min-width: 768px) {
   .wrapper {
     .sig {
-      max-height: 160px;
-      transition: 300ms ease-out
+      max-height: 10rem;
+      transition: 300ms ease-out;
+   
     }
 
   }
 }
+@media only screen and (min-width: 1200px) {}

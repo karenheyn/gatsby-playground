@@ -1,6 +1,6 @@
 .container {
     // margin: 0 auto;
-    max-width: 1150px;
+    // max-width: 1150px;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -12,8 +12,19 @@
     flex-grow: 1;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 2400px) {
     .container {
         margin: 0 auto;
+        max-width: 90vw;
+        // flex-grow: 10;
+    
+    }
+    :root{
+        font-size: 48px;
+    }
+}
+@media only screen and (min-width: 3000px) {
+    :root{
+        font-size: 78px;
     }
 }
